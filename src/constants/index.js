@@ -3,18 +3,6 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
   meta,
   starbucks,
   tesla,
@@ -22,8 +10,20 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
+  medicaldignosis
 } from "../assets";
+import dockerLogo from "../assets/tech/docker.png";
+import flaskLogo from "../assets/tech/Flask.png";
+import gitLogo from "../assets/tech/git.png";
+import javaLogo from "../assets/tech/java.png";
+import jsLogo from "../assets/tech/javascript.png";
+import kubernetesLogo from "../assets/tech/kubernetes.png";
+import openAiLogo from "../assets/tech/openAi.png";
+import pythonLogo from "../assets/tech/python.png";
+import reactLogo from "../assets/tech/reactjs.png";
+import sqlLogo from "../assets/tech/Sql.png";
+import tensorflowLogo from "../assets/tech/tensorflo.png";
+
 
 export const navLinks = [
   {
@@ -42,77 +42,38 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Data Structures & Algorithms",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Ai Engineer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Genrative Ai Engineering",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "LLM Fine Tunig & Deployment",
     icon: creator,
   },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  { name: "Python", icon: pythonLogo },
+  { name: "TensorFlow", icon: tensorflowLogo },
+  { name: "OpenAI", icon: openAiLogo },
+  { name: "Docker", icon: dockerLogo },
+  { name: "Kubernetes", icon: kubernetesLogo },
+  { name: "Flask", icon: flaskLogo },
+  { name: "SQL", icon: sqlLogo },
+  { name: "Git", icon: gitLogo },
+  { name: "Java", icon: javaLogo },
+  { name: "JavaScript", icon: jsLogo },
+  { name: "React", icon: reactLogo },
 ];
+
+
 
 const experiences = [
   {
@@ -198,7 +159,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Product Recommendation System",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
@@ -219,7 +180,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Farming Advisory System",
     description:
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
@@ -240,7 +201,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Financial fraud detection System",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
@@ -260,6 +221,27 @@ const projects = [
     image: tripguide,
     source_code_link: "https://github.com/",
   },
+  {
+    name: "Medical diagnosis System",
+    description:
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: medicaldignosis,
+    source_code_link: "https://github.com/",
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };

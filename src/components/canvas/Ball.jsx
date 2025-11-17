@@ -10,38 +10,55 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+const Ball = ({ imgUrl }) => {
+  // Debug log
+  console.log("🟡 Loading Ball texture:", imgUrl);
+
+  // Prevent crash if image is missing
+  const decal = useTexture(imgUrl, undefined, (err) => {
+    console.error("❌ FAILED TO LOAD ICON:", imgUrl, err);
+  });
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
+    <Float speed={1.6} rotationIntensity={1} floatIntensity={1.8}>
+      {/* Smooth ambient + directional light */}
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[3, 3, 3]} intensity={0.8} />
+      <pointLight position={[-3, -3, -3]} intensity={0.4} />
+
+      <mesh castShadow receiveShadow scale={2.7}>
         <icosahedronGeometry args={[1, 1]} />
+
         <meshStandardMaterial
-          color='#fff8eb'
+          color="#f0f0f0"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
         />
-        <Decal
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1}
-          map={decal}
-          flatShading
-        />
+
+        {/* Only apply Decal if texture exists */}
+        {decal && (
+          <Decal
+            position={[0, 0, 1]}
+            rotation={[Math.PI * 2, 0, 0]}
+            scale={1}
+            map={decal}
+            flatShading
+          />
+        )}
       </mesh>
     </Float>
   );
 };
 
 const BallCanvas = ({ icon }) => {
+  console.log("🎯 Rendering icon:", icon);
+
   return (
     <Canvas
-      frameloop='demand'
+      frameloop="always"
       dpr={[1, 2]}
+      shadows
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
